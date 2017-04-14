@@ -1,0 +1,45 @@
+https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
+
+mkdir minimal-react-boilerplate
+cd minimal-react-boilerplate
+npm init -y
+
+mkdir dist
+cd dist
+notepad index.html
+
+npm install --save-dev webpack webpack-dev-server
+
+notepad webpack.config.js
+
+
+npm start
+
+-- this should work otherwise check with webpack command may be the file name is wrong
+-- if other than webpack.config.js than specify in the package.json start script
+
+
+--- Hot reloading apply below
+
+
+npm install --save-dev react-hot-loader
+
+---- add in the webpack.config.js
+-- In entry
+'webpack-dev-server/client?http://localhost:8080',
+'webpack/hot/only-dev-server',
+-- In devServer
+hot: true
+-- in index.js
+module.hot.accept();
+
+--- Babel Setup
+
+npm install --save-dev babel-core babel-loader babel-preset-es2015
+
+npm install --save-dev babel-preset-stage-2
+
+npm install --save-dev babel-preset-react
+
+npm install --save react react-dom
+
